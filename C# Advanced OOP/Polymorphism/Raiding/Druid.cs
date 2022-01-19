@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Raiding
+{
+    public class Druid : BaseHero
+    {
+        private const int DefaultDruidPower = 80;
+
+        public Druid(string name)
+            : base(name, DefaultDruidPower)
+        {
+        }
+        public override string CastAbility()
+            => base.CastAbility() + $"healed for {Power}";
+        
+
+        public override BaseHero GetHero()
+        {
+            return new Druid(this.Name);
+        }
+    }
+}
